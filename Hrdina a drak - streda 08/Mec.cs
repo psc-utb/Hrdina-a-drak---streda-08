@@ -14,5 +14,11 @@ namespace Hrdina_a_drak___streda_08
         {
             PoskozeniMax = poskozeniMax;
         }
+
+        public Mec Clone()
+        {
+            Mec mec = new Mec(PoskozeniMax);
+            return mec;
+        }
     }
 }

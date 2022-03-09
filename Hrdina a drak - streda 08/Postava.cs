@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Hrdina_a_drak___streda_08
 {
-    public class Postava
+    public class Postava : Object
     {
         public string Jmeno { get; set; }
         public double Zdravi { get; set; }
