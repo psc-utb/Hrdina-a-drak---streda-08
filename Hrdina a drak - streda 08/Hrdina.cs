@@ -16,6 +16,23 @@ namespace Hrdina_a_drak___streda_08
             Mec = mec;
         }
 
+        public Hrdina(string jmeno, double zdraviMax, double poskozeniMax, double zbrojMax) : this(jmeno, zdraviMax, zdraviMax, poskozeniMax, zbrojMax, null)
+        {
+        }
+
+        public override double Utok(Postava oponent)
+        {
+            if (Mec != null)
+            {
+                return Utok(oponent, Mec.PoskozeniMax);
+            }
+            else
+            {
+                //return Utok(oponent, PoskozeniMax);
+                return base.Utok(oponent);
+            }
+        }
+
         public Hrdina Clone()
         {
             Hrdina klon = new Hrdina(this.Jmeno, this.Zdravi, this.ZdraviMax, this.PoskozeniMax, this.ZbrojMax, this.Mec.Clone());
