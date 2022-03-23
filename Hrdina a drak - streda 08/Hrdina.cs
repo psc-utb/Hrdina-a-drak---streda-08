@@ -44,8 +44,15 @@ namespace Hrdina_a_drak___streda_08
 
         public override string ToString()
         {
-            return $"{Jmeno}, Zdravi: {Zdravi}, ZdraviMax: {ZdraviMax}, PoskozeniMax: {PoskozeniMax}, ZbrojMax: {ZbrojMax}, Utekl: {Utekl}, Mec poskozeni: {Mec.PoskozeniMax}";
+            if (Mec != null)
+                return $"{Jmeno}, Zdravi: {Zdravi}, ZdraviMax: {ZdraviMax}, PoskozeniMax: {PoskozeniMax}, ZbrojMax: {ZbrojMax}, Utekl: {Utekl}, Mec poskozeni: {Mec.PoskozeniMax}, Hodnoceni postavy: {HodnoceniPostavy()}";
+            else
+                return base.ToString();
         }
 
+        public override bool KontrolaOponentaSpecificka(Postava oponent)
+        {
+            return true;
+        }
     }
 }

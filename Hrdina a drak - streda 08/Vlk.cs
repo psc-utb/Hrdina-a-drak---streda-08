@@ -12,5 +12,9 @@ namespace Hrdina_a_drak___streda_08
         {
         }
 
+        public override bool KontrolaOponentaSpecificka(Postava oponent)
+        {
+            return oponent is not Vlk;
+        }
     }
 }

@@ -41,7 +41,7 @@ namespace Hrdina_a_drak___streda_08
             int kolikPostavBojuje = 0;
             foreach (var postava in Postavy)
             {
-                if (postava.MuzeBojovat())
+                if (postava.MuzeBojovat() && postava.MuzeSiVybratOponenta(Postavy))
                 {
                     ++kolikPostavBojuje;
                 }
