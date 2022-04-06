@@ -63,7 +63,7 @@ namespace Hrdina_a_drak___streda_08
             return hodnotaObrany;
         }
 
-        public virtual Postava VyberOponenta(Postava[] postavy)
+        public virtual Postava VyberOponenta(List<Postava> postavy)
         {
             foreach (var postava in postavy)
             {
@@ -78,7 +78,7 @@ namespace Hrdina_a_drak___streda_08
 
         public abstract bool KontrolaOponentaSpecificka(Postava oponent);
 
-        public bool MuzeSiVybratOponenta(Postava[] postavy)
+        public bool MuzeSiVybratOponenta(List<Postava> postavy)
         {
             Postava oponent = VyberOponenta(postavy);
             if (oponent != null)
