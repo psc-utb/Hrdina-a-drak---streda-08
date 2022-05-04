@@ -24,7 +24,7 @@ namespace Hrdina_a_drak___streda_08
 
         void PropojeniUdalostiAMetody()
         {
-            foreach(var postava in Postavy)
+            foreach (var postava in Postavy)
             {
                 postava.VybranaNovaPostava += VypisInfoPoVyberuNovehoOponenta;
             }
@@ -58,6 +58,11 @@ namespace Hrdina_a_drak___streda_08
             }
         }
 
+        public Task BojAsync()
+        {
+            return Task.Run(Boj);
+        }
+
         public bool MuzeSeBojovat()
         {
             int kolikPostavBojuje = 0;
@@ -84,5 +89,17 @@ namespace Hrdina_a_drak___streda_08
             Console.WriteLine($"Postava: {utocnik.Jmeno} si vybrala nového oponenta: {oponent.Jmeno}");
         }
 
+
+        public void StatistikaPostav()
+        {
+            double prumernaSilaPostavy = Postavy.Average(postava => postava.HodnoceniPostavy());
+            Console.WriteLine($"Průměrná síla postav je: {prumernaSilaPostavy}");
+
+            List<Postava> draci = Postavy.FindAll(postava => postava is Drak);
+            draci.ForEach(pos => Console.WriteLine(pos.ToString()));
+            //draci.ForEach(Console.WriteLine);
+
+            Console.WriteLine(String.Empty);
+        }
     }
 }
